@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Mantle of the True Phantom</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background: #080711;
+        color: #e5dff5;
+        font-family: Georgia, "Times New Roman", serif;
+        line-height: 1.7;
+    }
+
+    header {
+        min-height: 340px;
+        padding: 75px 20px;
+        text-align: center;
+        background:
+            radial-gradient(ellipse at center, #38205c 0%, #151020 45%, #080711 80%);
+        border-bottom: 1px solid #7950a8;
+    }
+
+    .eyebrow {
+        color: #bd94ff;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font-size: 12px;
+    }
+
+    h1 {
+        margin: 20px 0;
+        font-size: clamp(32px, 6vw, 58px);
+        color: #f3eaff;
+        text-shadow: 0 0 25px #a45bff;
+        line-height: 1.2;
+    }
+
+    .subtitle {
+        color: #b9a8d5;
+        font-style: italic;
+        font-size: 18px;
+    }
+
+    .divider {
+        width: 100px;
+        height: 2px;
+        background: #b17cff;
+        margin: 25px auto;
+        box-shadow: 0 0 12px #a45bff;
+    }
+
+    main {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 22px;
+    }
+
+    .item-card {
+        background: linear-gradient(145deg, #191327, #0f0c19);
+        border: 1px solid #67418b;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 0 35px #381c5140;
+        margin-bottom: 35px;
+    }
+
+    .item-top {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 22px;
+    }
+
+    .item-symbol {
+        width: 85px;
+        height: 85px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #9863d0;
+        border-radius: 10px;
+        background: #251737;
+        color: #d3a8ff;
+        font-size: 42px;
+        text-shadow: 0 0 15px #b36aff;
+    }
+
+    h2 {
+        color: #d5b6ff;
+        font-size: 25px;
+        margin-bottom: 8px;
+    }
+
+    .rarity {
+        color: #d8a8ff;
+        font-weight: bold;
+        letter-spacing: 2px;
+        font-size: 13px;
+        text-transform: uppercase;
+    }
+
+    .item-type {
+        color: #a99bbd;
+        font-style: italic;
+    }
+
+    .stat-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 12px;
+        margin: 25px 0;
+    }
+
+    .stat {
+        padding: 16px;
+        background: #0b0913;
+        border: 1px solid #39284c;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .stat strong {
+        display: block;
+        color: #d3a5ff;
+        font-size: 25px;
+    }
+
+    .stat span {
+        color: #9f91b1;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .description {
+        color: #c9bfd9;
+        margin-top: 15px;
+    }
+
+    .section-title {
+        font-size: 28px;
+        margin: 45px 0 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #49315e;
+    }
+
+    .ability {
+        background: #12101c;
+        border-left: 3px solid #9560ce;
+        border-radius: 0 8px 8px 0;
+        padding: 23px;
+        margin-bottom: 16px;
+        transition: 0.25s;
+    }
+
+    .ability:hover {
+        background: #1b1429;
+        border-left-color: #d5a4ff;
+        transform: translateX(5px);
+    }
+
+    .ability h3 {
+        color: #d7b4ff;
+        font-size: 20px;
+        margin-bottom: 8px;
+    }
+
+    .ability p {
+        color: #c4bad3;
+    }
+
+    .tag {
+        display: inline-block;
+        margin-bottom: 10px;
+        color: #c79bff;
+        background: #2a1b3c;
+        border: 1px solid #563875;
+        padding: 3px 10px;
+        border-radius: 20px;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .quote {
+        text-align: center;
+        padding: 35px 15px;
+        margin: 40px 0;
+        color: #b99cdb;
+        font-style: italic;
+        font-size: 20px;
+        border-top: 1px solid #49315e;
+        border-bottom: 1px solid #49315e;
+    }
+
+    footer {
+        padding: 30px 15px;
+        text-align: center;
+        color: #766887;
+        font-size: 12px;
+        background: #05040a;
+    }
+
+    .glow {
+        color: #d7b1ff;
+        text-shadow: 0 0 10px #9955e8;
+    }
+
+    @media (max-width: 600px) {
+        header {
+            padding: 55px 18px;
+        }
+
+        .item-card {
+            padding: 20px;
+        }
+
+        .section-title {
+            font-size: 24px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <p class="eyebrow">A Legendary Magic Item</p>
+
+    <h1>The Mantle of the<br>True Phantom</h1>
+
+    <div class="divider"></div>
+
+    <p class="subtitle">
+        "Wear a thousand faces. Leave not a single trace."
+    </p>
+</header>
+
+<main>
+
+    <section class="item-card">
+
+        <div class="item-top">
+            <div class="item-symbol">♜</div>
+
+            <div>
+                <h2>The Mantle of the True Phantom</h2>
+                <p class="rarity">Legendary · Requires Attunement</p>
+                <p class="item-type">Armor (Studded Leather)</p>
+            </div>
+        </div>
+
+        <div class="stat-grid">
+            <div class="stat">
+                <strong>+3</strong>
+                <span>Armor Class</span>
+            </div>
+
+            <div class="stat">
+                <strong>3</strong>
+                <span>Flicker Charges</span>
+            </div>
+
+            <div class="stat">
+                <strong>30 ft.</strong>
+                <span>Teleport Range</span>
+            </div>
+
+            <div class="stat">
+                <strong>4d6</strong>
+                <span>Bonus Psychic Damage</span>
+            </div>
+        </div>
+
+        <h2>Description</h2>
+
+        <p class="description">
+            Woven from enchanted shadow and stitched with threads
+            stolen from the Ethereal Plane, this extraordinary
+            armor is more than protection. It is a weapon of
+            deception, a veil against the world, and a silent
+            companion to those who walk between identities.
+        </p>
+
+        <p class="description">
+            While wearing this armor, you gain a <span class="glow">+3
+            bonus to AC</span>. As a bonus action, you can speak
+            its command word and transform its appearance into
+            clothing or another kind of armor. You choose its
+            colors, style, and accessories, and it retains its
+            light weight.
+        </p>
+
+        <p class="description">
+            The illusion is tactile and flawless. Physical contact
+            reveals nothing unusual, and your equipment, including
+            weapons, can be hidden or seamlessly blended into
+            your disguise. The illusion lasts until you change
+            it with another bonus action or remove the armor.
+        </p>
+
+    </section>
+
+    <h2 class="section-title">Legendary Properties</h2>
+
+    <section class="ability">
+        <span class="tag">Passive Ability</span>
+        <h3>✧ Perfect Mimicry</h3>
+        <p>
+            You have advantage on Charisma (Deception) and
+            Charisma (Performance) checks made to maintain a
+            disguise or impersonate a specific individual while
+            using the armor's illusion.
+        </p>
+    </section>
+
+    <section class="ability">
+        <span class="tag">Passive Ability</span>
+        <h3>✧ Weightless Grace</h3>
+        <p>
+            The armor makes no sound, regardless of your
+            movements. You have advantage on Dexterity (Stealth)
+            checks, and you cannot be tracked by non-magical means.
+        </p>
+    </section>
+
+    <section class="ability">
+        <span class="tag">Reaction · 3 Charges</span>
+        <h3>✧ Flicker Shift</h3>
+        <p>
+            When a creature hits you with an attack, you can
+            use your reaction to expend one charge and briefly
+            turn into a translucent shadow.
+        </p>
+
+        <p style="margin-top: 12px;">
+            Roll a d6 and reduce the incoming damage by the
+            result multiplied by 5. You can then immediately
+            teleport up to 30 feet to an unoccupied space you
+            can see.
+        </p>
+
+        <p style="margin-top: 12px;">
+            <span class="glow">Recharge:</span> The armor regains
+            all expended charges daily at dusk.
+        </p>
+    </section>
+
+    <section class="ability">
+        <span class="tag">Ambush · Psychic Damage</span>
+        <h3>✧ Unseen Malice</h3>
+        <p>
+            If you attack a creature while disguised as someone
+            they consider a trusted ally or a harmless bystander,
+            you gain advantage on your first attack roll against them.
+        </p>
+
+        <p style="margin-top: 12px;">
+            If the attack hits, it deals an additional
+            <span class="glow">4d6 psychic damage</span> as the
+            psychological shock of the betrayal breaks their resolve.
+        </p>
+    </section>
+
+    <div class="quote">
+        "The most dangerous blade is the one your enemy
+        never realizes is drawn."
+    </div>
+
+</main>
+
+<footer>
+    <p>THE MANTLE OF THE TRUE PHANTOM</p>
+    <p>A Legendary Relic for Dungeons & Dragons</p>
+    <p style="margin-top: 8px;">Forged in shadow. Perfected in deception.</p>
+</footer>
+
+</body>
+</html>
